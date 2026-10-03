@@ -4,28 +4,37 @@ import mongoose from "mongoose";
 const MONGODB_URI = process.env.MONGODB_URI;
 
 if (!MONGODB_URI) {
-  throw new Error("Please define MONGODB_URI in .env.local");
+  throw new Error(
+    "Please define MONGODB_URI in your .env.local file or Vercel Environment Variables"
+  );
 }
 
-const globalWithMongoose = globalThis as typeof globalThis & {
-  mongooseCache?: {
-    conn: typeof mongoose | null;
-    promise: Promise<typeof mongoose> | null;
-  };
+type MongooseCache = {
+  conn: typeof mongoose | null;
+  promise: Promise<typeof mongoose> | null;
 };
 
-const cached = (globalWithMongoose.mongooseCache ??= {
+declare global {
+  // eslint-disable-next-line no-var
+  var mongooseCache: MongooseCache | undefined;
+}
+
+const cached: MongooseCache = global.mongooseCache ?? {
   conn: null,
   promise: null,
-});
+};
 
-async function connectDB() {
+global.mongooseCache = cached;
+
+async function connectDB(): Promise<typeof mongoose> {
   if (cached.conn) {
     return cached.conn;
   }
 
   if (!cached.promise) {
-    cached.promise = mongoose.connect(MONGODB_URI);
+    cached.promise = mongoose.connect(MONGODB_URI).then((mongooseInstance) => {
+      return mongooseInstance;
+    });
   }
 
   try {
