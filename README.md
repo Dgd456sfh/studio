@@ -184,9 +184,9 @@ The application is designed for deployment on Vercel.
 **GitHub Repository:**
 https://github.com/Dgd456sfh/studio
 
-**Live Demo:** https://youtu.be/G92nRJmCpsg?si=FitU-9eGOgWq-MTa
+**Live Demo Link:** studio-6kpp.vercel.app
 
-**Demo Video:** Add your 2–4 minute project demonstration link here.
+**Demo Video:** https://youtu.be/G92nRJmCpsg?si=FitU-9eGOgWq-MTa
 
 ## 🔮 Future Improvements
 
