@@ -42,7 +42,7 @@ const tools = [
     number: "03",
   },
   {
-    title: "AI Ad Generator",
+    title: "AI Image Generator",
     description:
       "Describe your creative idea in a prompt and generate an ad visual.",
     detail: "Generate with prompts",

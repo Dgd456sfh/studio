@@ -93,11 +93,11 @@ export default function PromptAdPage() {
             </div>
 
             <h1 className="text-3xl font-bold tracking-tight md:text-4xl">
-              Create ads with AI
+              Create Image with AI
             </h1>
 
             <p className="mt-2 max-w-2xl text-sm leading-6 text-[#806b5e] md:text-base">
-              Describe your idea and generate a product advertisement visual.
+              Describe your idea and generate a product Image visual.
               Your generated image will be saved to Cloudinary.
             </p>
           </div>
@@ -110,7 +110,7 @@ export default function PromptAdPage() {
                   <Sparkles size={22} />
                 </div>
                 <div>
-                  <h2 className="font-semibold">Describe your ad</h2>
+                  <h2 className="font-semibold">Describe your Image</h2>
                   <p className="mt-1 text-xs text-[#9b8577]">
                     Write a clear prompt for your visual
                   </p>
@@ -126,7 +126,7 @@ export default function PromptAdPage() {
                 onChange={(event) => setPrompt(event.target.value)}
                 maxLength={1000}
                 rows={7}
-                placeholder="Example: Create a premium perfume advertisement with a dark background, golden lighting, elegant flowers and a luxury editorial style..."
+                placeholder="Example: Create a premium perfume Image with a dark background, golden lighting, elegant flowers and a luxury editorial style..."
                 className="w-full resize-y rounded-xl border border-[#e5d5c8] bg-[#fcf8f4] px-4 py-3 text-sm leading-6 outline-none transition placeholder:text-[#b2a094] focus:border-[#a96648]"
               />
 
@@ -174,7 +174,7 @@ export default function PromptAdPage() {
                 ) : (
                   <>
                     <Sparkles size={18} />
-                    Generate Ad
+                    Generate Image
                   </>
                 )}
               </button>
@@ -189,7 +189,7 @@ export default function PromptAdPage() {
             <section className="rounded-2xl border border-[#e8d9cc] bg-white p-5 shadow-sm md:p-7">
               <div className="mb-5 flex items-center justify-between">
                 <div>
-                  <h2 className="font-semibold">Generated advertisement</h2>
+                  <h2 className="font-semibold">Generated Image Of Product</h2>
                   <p className="mt-1 text-xs text-[#9b8577]">
                     Your result will appear here
                   </p>
@@ -208,7 +208,7 @@ export default function PromptAdPage() {
                       className="animate-spin text-[#a96648]"
                     />
                     <p className="mt-4 text-sm font-semibold">
-                      Creating your advertisement
+                      Creating your Image
                     </p>
                     <p className="mt-2 text-xs leading-5 text-[#9b8577]">
                       This may take a little while. Please keep this page open.
